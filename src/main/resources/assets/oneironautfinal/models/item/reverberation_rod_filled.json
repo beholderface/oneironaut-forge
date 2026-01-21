@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld_rod",
+  "textures": {
+    "layer0": "oneironautfinal:item/reverberation_rod_filled"
+  }
+}

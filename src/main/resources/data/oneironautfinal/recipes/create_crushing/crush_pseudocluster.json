@@ -1,0 +1,27 @@
+{
+  "type": "create:crushing",
+  "fabric:load_conditions": [
+    {
+      "condition": "fabric:all_mods_loaded",
+      "values": [
+        "create"
+      ]
+    }
+  ],
+  "ingredients": [
+    {
+      "item": "oneironautfinal:pseudoamethyst_cluster"
+    }
+  ],
+  "processingTime": 150,
+  "results": [
+    {
+      "count": 4,
+      "item": "oneironautfinal:pseudoamethyst_shard"
+    },
+    {
+      "chance": 0.4,
+      "item": "oneironautfinal:shifting_pseudoamethyst"
+    }
+  ]
+}

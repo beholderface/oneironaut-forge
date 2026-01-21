@@ -1,0 +1,11 @@
+{
+  "type": "oneironautfinal:infuse",
+  "blockIn": {
+    "type": "block",
+    "block": "minecraft:zombie_head"
+  },
+  "resultType": {
+    "name": "oneironautfinal:transformingskull"
+  },
+  "mediaCost": 100000
+}

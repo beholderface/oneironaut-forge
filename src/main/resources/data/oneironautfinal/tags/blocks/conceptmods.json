@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "oneironautfinal:concept_modifier_gridsize",
+    "oneironautfinal:concept_modifier_maxhealth",
+    "oneironautfinal:concept_modifier_antierosion",
+    "oneironautfinal:concept_modifier_falsy",
+    "oneironautfinal:concept_modifier_comparison",
+    "oneironautfinal:concept_modifier_gtp_drop",
+    "oneironautfinal:concept_modifier_stack_size"
+  ]
+}

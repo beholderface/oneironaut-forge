@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "M": {
+      "item": "oneironautfinal:concept_modifier_empty"
+    },
+    "P": {
+      "item": "oneironautfinal:shifting_pseudoamethyst"
+    },
+    "E": {
+      "item": "minecraft:ender_eye"
+    }
+  },
+  "pattern": [
+    "PPP",
+    "EME",
+    "PPP"
+  ],
+  "result": {
+    "item": "oneironautfinal:concept_modifier_gtp_drop"
+  }
+}

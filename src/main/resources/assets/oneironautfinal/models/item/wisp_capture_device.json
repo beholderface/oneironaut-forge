@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "oneironautfinal:item/wisp_capture_device_filled",
+      "predicate": {
+        "oneironautfinal:contains_wisp": 0.99
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "oneironautfinal:item/wisp_capture_device_empty"
+  }
+}

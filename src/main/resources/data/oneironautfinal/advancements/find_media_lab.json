@@ -1,0 +1,41 @@
+{
+  "parent": "oneironautfinal:enter_noosphere",
+  "criteria": {
+    "tower": {
+      "conditions": {
+        "player": [
+          {
+            "condition": "minecraft:entity_properties",
+            "entity": "this",
+            "predicate": {
+              "location": {
+                "structure": "oneironautfinal:media_laboratory"
+              }
+            }
+          }
+        ]
+      },
+      "trigger": "minecraft:location"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "oneironautfinal.advancements.noosphere.find_media_lab.description"
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "item": "oneironautfinal:hex_resistant_block"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "oneironautfinal.advancements.noosphere.find_media_lab"
+    }
+  },
+  "requirements": [
+    [
+      "tower"
+    ]
+  ]
+}

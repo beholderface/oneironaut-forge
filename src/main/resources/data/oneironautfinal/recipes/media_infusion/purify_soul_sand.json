@@ -1,0 +1,11 @@
+{
+  "type": "oneironautfinal:infuse",
+  "blockIn": {
+    "type": "block",
+    "block": "minecraft:soul_sand"
+  },
+  "resultType": {
+    "name": "minecraft:sand"
+  },
+  "mediaCost": 50000
+}

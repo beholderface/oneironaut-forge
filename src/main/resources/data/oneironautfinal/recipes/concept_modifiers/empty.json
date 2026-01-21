@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "hexcasting:slate_block"
+    },
+    "P": {
+      "item": "oneironautfinal:pseudoamethyst_block"
+    }
+  },
+  "pattern": [
+    " P ",
+    "SPS",
+    "SSS"
+  ],
+  "result": {
+    "item": "oneironautfinal:concept_modifier_empty"
+  }
+}

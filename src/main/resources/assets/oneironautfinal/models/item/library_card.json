@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "oneironautfinal:item/library_card_written",
+      "predicate": {
+        "oneironautfinal:written": 0.99
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "oneironautfinal:item/library_card"
+  }
+}

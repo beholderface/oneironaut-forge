@@ -1,0 +1,11 @@
+{
+  "type": "oneironautfinal:infuse",
+  "blockIn": {
+    "type": "block",
+    "block": "minecraft:soul_soil"
+  },
+  "resultType": {
+    "name": "minecraft:dirt"
+  },
+  "mediaCost": 50000
+}

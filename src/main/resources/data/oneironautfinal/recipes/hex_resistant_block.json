@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "P": {
+      "item": "oneironautfinal:pseudoamethyst_shard"
+    }
+  },
+  "pattern": [
+    " P ",
+    "POP",
+    " P "
+  ],
+  "result": {
+    "item": "oneironautfinal:hex_resistant_block",
+    "count": 1
+  }
+}

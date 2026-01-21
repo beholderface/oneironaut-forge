@@ -1,0 +1,28 @@
+{
+  "parent": "oneironautfinal:lore/root",
+  "criteria": {
+    "grant": {
+      "trigger": "minecraft:impossible"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "oneironautfinal.advancements.lore.science2.description"
+    },
+    "frame": "task",
+    "hidden": true,
+    "icon": {
+      "item": "oneironautfinal:memory_fragment"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "oneironautfinal.advancements.lore.science2"
+    }
+  },
+  "requirements": [
+    [
+      "grant"
+    ]
+  ]
+}

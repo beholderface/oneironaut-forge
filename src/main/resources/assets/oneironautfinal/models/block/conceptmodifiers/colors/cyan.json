@@ -1,0 +1,7 @@
+{
+	"parent": "oneironautfinal:block/conceptmodifiers/conceptmodifier_generic",
+	"texture_size": [16, 32],
+	"textures": {
+		"0": "oneironautfinal:block/conceptsigils/color/cyan"
+	}
+}

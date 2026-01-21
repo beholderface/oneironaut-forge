@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "oneironautfinal:block/monkfruit_bush_stage1"
+  }
+}

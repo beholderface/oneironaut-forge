@@ -1,0 +1,20 @@
+{
+  "parent": "minecraft:item/generated",
+  "overrides": [
+    {
+      "model": "oneironautfinal:item/shifting_pseudoamethyst",
+      "predicate": {
+        "oneironautfinal:observation": -0.01
+      }
+    },
+    {
+      "model": "oneironautfinal:item/pseudoamethyst_shard",
+      "predicate": {
+        "oneironautfinal:observation": 0.99
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "oneironautfinal:item/shifting_pseudoamethyst"
+  }
+}

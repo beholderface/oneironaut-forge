@@ -1,0 +1,11 @@
+{
+  "type": "oneironautfinal:infuse",
+  "blockIn": {
+    "type": "block",
+    "block": "oneironautfinal:media_gel"
+  },
+  "resultType": {
+    "name": "oneironautfinal:cell"
+  },
+  "mediaCost": 10000
+}

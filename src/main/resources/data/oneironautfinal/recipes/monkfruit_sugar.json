@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "oneironautfinal:monkfruit"
+    }
+  ],
+  "result": {
+    "count": 1,
+    "item": "minecraft:sugar"
+  }
+}

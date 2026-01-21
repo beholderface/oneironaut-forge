@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "P": {
+      "item": "hexcasting:battery"
+    },
+    "S": {
+      "item": "hexcasting:slate_block"
+    },
+    "A": {
+      "item": "oneironautfinal:pseudoamethyst_block"
+    },
+    "W": {
+      "tag": "oneironautfinal:wisp_lanterns"
+    }
+  },
+  "pattern": [
+    "AWA",
+    "SPS",
+    "SSS"
+  ],
+  "result": {
+    "item": "oneironautfinal:wisp_battery"
+  }
+}

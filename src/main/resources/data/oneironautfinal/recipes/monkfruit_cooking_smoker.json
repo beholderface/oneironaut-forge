@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smoking",
+  "category": "food",
+  "ingredient": {
+    "item": "oneironautfinal:monkfruit"
+  },
+  "result": "oneironautfinal:monkfruit_cooked",
+  "experience": 0.1,
+  "cookingtime": 100
+}

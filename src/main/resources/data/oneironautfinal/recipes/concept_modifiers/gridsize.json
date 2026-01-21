@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "M": {
+      "item": "oneironautfinal:concept_modifier_empty"
+    },
+    "P": {
+      "item": "oneironautfinal:shifting_pseudoamethyst"
+    },
+    "L": {
+      "item": "hexcasting:lens"
+    }
+  },
+  "pattern": [
+    "PPP",
+    "LML",
+    "PPP"
+  ],
+  "result": {
+    "item": "oneironautfinal:concept_modifier_gridsize"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "tag": "oneironautfinal:conceptdecorators"
+  },
+  "result": "oneironautfinal:concept_decorator_color/pink",
+  "count": 1
+}

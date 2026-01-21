@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "oneironautfinal:block/conceptmodifiers/colors/brown",
+      "x": 180
+    },
+    "facing=up": {
+      "model": "oneironautfinal:block/conceptmodifiers/colors/brown",
+      "x": 0
+    },
+    "facing=east": {
+      "model": "oneironautfinal:block/conceptmodifiers/colors/brown",
+      "x": 90,
+      "y": 90
+    },
+    "facing=west": {
+      "model": "oneironautfinal:block/conceptmodifiers/colors/brown",
+      "x": 90,
+      "y": 270
+    },
+    "facing=north": {
+      "model": "oneironautfinal:block/conceptmodifiers/colors/brown",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "oneironautfinal:block/conceptmodifiers/colors/brown",
+      "x": 270
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "oneironautfinal:infuse",
+  "blockIn": {
+    "type": "block",
+    "block": "minecraft:soul_campfire"
+  },
+  "resultType": {
+    "name": "minecraft:campfire"
+  },
+  "mediaCost": 50000
+}

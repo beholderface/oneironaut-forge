@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "G": {
+      "item": "minecraft:glass"
+    },
+    "E": {
+      "item": "hexcasting:edified_planks"
+    },
+    "A": {
+      "item": "oneironautfinal:pseudoamethyst_block"
+    },
+    "B": {
+      "item": "oneironautfinal:noosphere_basalt"
+    }
+  },
+  "pattern": [
+    "GEG",
+    "GAG",
+    "GBG"
+  ],
+  "result": {
+    "item": "oneironautfinal:wisp_lantern"
+  }
+}

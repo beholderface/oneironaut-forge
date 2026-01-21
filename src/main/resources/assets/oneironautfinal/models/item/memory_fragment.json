@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "oneironautfinal:item/memory_fragment"
+  }
+}

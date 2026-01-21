@@ -1,13 +1,37 @@
 {
-  "hexcasting:recipes/tools/trinket": {
+  "paucal:be_patron": {
     "criteria": {
-      "has_item": "2026-01-20 23:21:02 +0530"
+      "on_login": "2026-01-20 23:20:29 +0530"
     },
     "done": true
   },
   "hexcasting:grant_patchi_book": {
     "criteria": {
       "tick": "2026-01-20 23:20:30 +0530"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2026-01-20 23:20:30 +0530"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:forest": "2026-01-20 23:20:31 +0530"
+    },
+    "done": false
+  },
+  "minecraft:husbandry/root": {
+    "criteria": {
+      "consumed_item": "2026-01-20 23:20:49 +0530"
+    },
+    "done": true
+  },
+  "hexcasting:recipes/tools/trinket": {
+    "criteria": {
+      "has_item": "2026-01-20 23:21:02 +0530"
     },
     "done": true
   },
@@ -59,27 +83,9 @@
     },
     "done": true
   },
-  "minecraft:recipes/decorations/crafting_table": {
-    "criteria": {
-      "unlock_right_away": "2026-01-20 23:20:30 +0530"
-    },
-    "done": true
-  },
   "hexcasting:recipes/tools/thought_knot": {
     "criteria": {
       "has_item": "2026-01-20 23:21:02 +0530"
-    },
-    "done": true
-  },
-  "minecraft:adventure/adventuring_time": {
-    "criteria": {
-      "minecraft:forest": "2026-01-20 23:20:31 +0530"
-    },
-    "done": false
-  },
-  "minecraft:husbandry/root": {
-    "criteria": {
-      "consumed_item": "2026-01-20 23:20:49 +0530"
     },
     "done": true
   },
@@ -89,9 +95,27 @@
     },
     "done": true
   },
-  "paucal:be_patron": {
+  "hexal:recipes/freeze/freeze/powder_snow_cauldron": {
     "criteria": {
-      "on_login": "2026-01-20 23:20:29 +0530"
+      "has_item": "2026-01-21 20:15:57 +0530"
+    },
+    "done": true
+  },
+  "hexal:recipes/freeze/freeze/blue_ice": {
+    "criteria": {
+      "has_item": "2026-01-21 20:15:57 +0530"
+    },
+    "done": true
+  },
+  "hexal:recipes/freeze/freeze/packed_ice": {
+    "criteria": {
+      "has_item": "2026-01-21 20:15:57 +0530"
+    },
+    "done": true
+  },
+  "hexal:recipes/redstone/relay": {
+    "criteria": {
+      "has_item": "2026-01-21 20:15:57 +0530"
     },
     "done": true
   },

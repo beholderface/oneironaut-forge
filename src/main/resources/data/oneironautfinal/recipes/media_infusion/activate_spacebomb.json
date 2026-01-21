@@ -1,0 +1,14 @@
+{
+  "type": "oneironautfinal:infuse",
+  "blockIn": {
+    "type": "block",
+    "block": "oneironautfinal:spacebomb"
+  },
+  "resultType": {
+    "name": "oneironautfinal:spacebomb",
+    "properties": {
+      "energized": "true"
+    }
+  },
+  "mediaCost": 2000000000
+}

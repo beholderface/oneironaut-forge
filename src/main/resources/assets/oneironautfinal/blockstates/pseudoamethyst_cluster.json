@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "oneironautfinal:block/pseudoamethyst_cluster",
+      "x": 180
+    },
+    "facing=east": {
+      "model": "oneironautfinal:block/pseudoamethyst_cluster",
+      "x": 90,
+      "y": 90
+    },
+    "facing=north": {
+      "model": "oneironautfinal:block/pseudoamethyst_cluster",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "oneironautfinal:block/pseudoamethyst_cluster",
+      "x": 90,
+      "y": 180
+    },
+    "facing=up": {
+      "model": "oneironautfinal:block/pseudoamethyst_cluster"
+    },
+    "facing=west": {
+      "model": "oneironautfinal:block/pseudoamethyst_cluster",
+      "x": 90,
+      "y": 270
+    }
+  }
+}

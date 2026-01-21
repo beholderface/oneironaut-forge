@@ -1,0 +1,26 @@
+{
+  "parent": "minecraft:item/handheld_rod",
+  "overrides": [
+    {
+      "model": "oneironautfinal:item/reverberation_rod",
+      "predicate": {
+        "hexcasting:has_patterns": -0.01
+      }
+    },
+    {
+      "model": "oneironautfinal:item/reverberation_rod_filled",
+      "predicate": {
+        "hexcasting:has_patterns": 0.99
+      }
+    },
+    {
+      "model": "oneironautfinal:item/reverberation_rod_casting",
+      "predicate": {
+        "oneironautfinal:is_casting": 0.99
+      }
+    }
+  ],
+  "textures": {
+    "layer0": "oneironautfinal:item/reverberation_rod"
+  }
+}

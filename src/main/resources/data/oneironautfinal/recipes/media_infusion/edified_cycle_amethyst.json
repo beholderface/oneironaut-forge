@@ -1,0 +1,14 @@
+{
+  "type": "oneironautfinal:infuse",
+  "blockIn": {
+    "type": "block",
+    "block": "hexcasting:amethyst_edified_leaves"
+  },
+  "resultType": {
+    "name": "hexcasting:citrine_edified_leaves",
+    "properties":{
+      "peristent": "true"
+    }
+  },
+  "mediaCost": 10000
+}

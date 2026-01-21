@@ -1,0 +1,22 @@
+{
+  "replace": false,
+  "values": [
+    "oneironautfinal:concept_modifier_empty",
+    "oneironautfinal:concept_decorator_color/white",
+    "oneironautfinal:concept_decorator_color/light_gray",
+    "oneironautfinal:concept_decorator_color/black",
+    "oneironautfinal:concept_decorator_color/gray",
+    "oneironautfinal:concept_decorator_color/brown",
+    "oneironautfinal:concept_decorator_color/red",
+    "oneironautfinal:concept_decorator_color/orange",
+    "oneironautfinal:concept_decorator_color/yellow",
+    "oneironautfinal:concept_decorator_color/lime",
+    "oneironautfinal:concept_decorator_color/green",
+    "oneironautfinal:concept_decorator_color/cyan",
+    "oneironautfinal:concept_decorator_color/light_blue",
+    "oneironautfinal:concept_decorator_color/blue",
+    "oneironautfinal:concept_decorator_color/purple",
+    "oneironautfinal:concept_decorator_color/magenta",
+    "oneironautfinal:concept_decorator_color/pink"
+  ]
+}

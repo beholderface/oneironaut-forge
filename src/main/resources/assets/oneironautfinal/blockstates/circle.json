@@ -1,0 +1,30 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "oneironautfinal:block/circle",
+      "x": 180
+    },
+    "facing=up": {
+      "model": "oneironautfinal:block/circle",
+      "x": 0
+    },
+    "facing=east": {
+      "model": "oneironautfinal:block/circle",
+      "x": 90,
+      "y": 90
+    },
+    "facing=west": {
+      "model": "oneironautfinal:block/circle",
+      "x": 90,
+      "y": 270
+    },
+    "facing=north": {
+      "model": "oneironautfinal:block/circle",
+      "x": 90
+    },
+    "facing=south": {
+      "model": "oneironautfinal:block/circle",
+      "x": 270
+    }
+  }
+}

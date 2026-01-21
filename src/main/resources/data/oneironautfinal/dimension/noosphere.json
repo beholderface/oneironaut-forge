@@ -1,0 +1,25 @@
+{
+  "type": "oneironautfinal:noosphere_type",
+  "generator": {
+    "type": "minecraft:flat",
+    "settings": {
+      "biome": "oneironautfinal:noosphere_sea",
+      "lakes": false,
+      "features": true,
+      "layers": [
+        {
+          "block": "minecraft:bedrock",
+          "height": 1
+        },
+        {
+          "block": "oneironautfinal:noosphere_basalt",
+          "height": 16
+        },
+        {
+          "block": "oneironautfinal:thought_slurry",
+          "height": 47
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "hexcasting:slate_block"
+    },
+    "C": {
+      "item": "hexcasting:impetus/redstone"
+    },
+    "S": {
+      "item": "oneironautfinal:sentinel_sensor"
+    },
+    "P": {
+      "item": "oneironautfinal:shifting_pseudoamethyst"
+    }
+  },
+  "pattern": [
+    " S ",
+    "BPB",
+    "BCB"
+  ],
+  "result": {
+    "item": "oneironautfinal:sentinel_trap"
+  }
+}
