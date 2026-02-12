@@ -1,0 +1,178 @@
+package org.arcticquests.dev.oneironautfinal.OneironautFinal.registry;
+
+import at.petrak.hexcasting.api.block.circle.BlockCircleComponent;
+import at.petrak.hexcasting.common.blocks.circles.BlockSlate;
+import at.petrak.hexcasting.common.lib.HexAttributes;
+import at.petrak.hexcasting.common.lib.HexBlocks;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.nbt.CompoundTag;
+import net.minecraft.world.entity.ai.attributes.Attributes;
+import net.minecraft.world.item.DyeColor;
+import net.minecraft.world.level.block.AmethystClusterBlock;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.RegistryObject;
+import org.arcticquests.dev.oneironautfinal.OneironautFinal.Oneironautfinal;
+import org.arcticquests.dev.oneironautfinal.OneironautFinal.block.*;
+import org.arcticquests.dev.oneironautfinal.OneironautFinal.block.blockentity.*;
+import ram.talia.hexal.common.lib.HexalBlocks;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.function.Supplier;
+import java.util.function.ToIntFunction;
+
+public class OneironautBlockRegistry {
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create( Registries.BLOCK,Oneironautfinal.MODID);
+    //public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(Oneironautfinal.MOD_ID, Registry.FLUID_KEY);
+    public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES = DeferredRegister.create( Registries.BLOCK_ENTITY_TYPE,Oneironautfinal.MODID);
+
+    //I will not scream at my computer over this
+
+    public static void init() {
+        BLOCKS.register();
+        BLOCK_ENTITIES.register();
+    }
+    public static final RegistryObject<Block> PSUEDOAMETHYST_BLOCK = BLOCKS.register("pseudoamethyst_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.AMETHYST_BLOCK)
+            .destroyTime(1.5f)
+            .sound(SoundType.AMETHYST)
+            .explosionResistance(5)
+            .lightLevel(state -> 7)
+            ));
+    public static final RegistryObject<Block> NOOSPHERE_BASALT = BLOCKS.register("noosphere_basalt", () -> new Block(BlockBehaviour.Properties.copy(Blocks.BASALT)
+            .destroyTime(1f)
+            .sound(SoundType.BASALT)
+            .explosionResistance(4)
+    ));
+    public static final RegistryObject<NoosphereGateway> NOOSPHERE_GATE = BLOCKS.register("noosphere_gate", () -> new NoosphereGateway(BlockBehaviour.Properties.copy(Blocks.END_PORTAL).lightLevel(state -> 15).noCollission().destroyTime(-1)));
+    public static final RegistryObject<BlockEntityType<NoosphereGateEntity>> NOOSPHERE_GATE_ENTITY = BLOCK_ENTITIES.register("noosphere_gate_entity", () -> BlockEntityType.Builder.of(NoosphereGateEntity::new, NOOSPHERE_GATE.get()).build(null));
+    public static final RegistryObject<WispLantern> WISP_LANTERN = BLOCKS.register("wisp_lantern", () -> new WispLantern(BlockBehaviour.Properties.copy(Blocks.GLASS).lightLevel(state -> 15).sound(SoundType.GLASS)));
+    public static final RegistryObject<WispLanternTinted> WISP_LANTERN_TINTED = BLOCKS.register("wisp_lantern_tinted", () -> new WispLanternTinted(BlockBehaviour.Properties.copy(Blocks.GLASS).sound(SoundType.GLASS)));
+    public static final RegistryObject<BlockEntityType<WispLanternEntity>> WISP_LANTERN_ENTITY = BLOCK_ENTITIES.register("wisp_lantern_entity", () -> BlockEntityType.Builder.of(WispLanternEntity::new, WISP_LANTERN.get()).build(null));
+    public static final RegistryObject<BlockEntityType<WispLanternEntityTinted>> WISP_LANTERN_ENTITY_TINTED = BLOCK_ENTITIES.register("wisp_lantern_entity_tinted", () -> BlockEntityType.Builder.of(WispLanternEntityTinted::new, WISP_LANTERN_TINTED.get()).build(null));
+    public static final RegistryObject<ThoughtSlurryBlock> THOUGHT_SLURRY_BLOCK = BLOCKS.register("thought_slurry", () -> ThoughtSlurryBlock.INSTANCE);
+    public static final RegistryObject<SuperBuddingBlock> SUPER_BUDDING = BLOCKS.register("super_budding", () -> new SuperBuddingBlock(BlockBehaviour.Properties.copy(Blocks.BUDDING_AMETHYST)));
+    public static final RegistryObject<SentinelTrapImpetus> SENTINEL_TRAP = BLOCKS.register("sentinel_trap", () -> new SentinelTrapImpetus(BlockBehaviour.Properties.copy(HexBlocks.SLATE_BLOCK).destroyTime(2f)));
+    public static final RegistryObject<BlockEntityType<SentinelTrapImpetusEntity>> SENTINEL_TRAP_ENTITY = BLOCK_ENTITIES.register("sentinel_trap_entity", () -> BlockEntityType.Builder.of(SentinelTrapImpetusEntity::new, SENTINEL_TRAP.get()).build(null));
+    public static final RegistryObject<SentinelSensor> SENTINEL_SENSOR = BLOCKS.register("sentinel_sensor", () -> new SentinelSensor(BlockBehaviour.Properties.copy(HexBlocks.SLATE_BLOCK)));
+    public static final RegistryObject<BlockEntityType<SentinelSensorEntity>> SENTINEL_SENSOR_ENTITY = BLOCK_ENTITIES.register("sentinel_sensor_entity", () -> BlockEntityType.Builder.of(SentinelSensorEntity::new, SENTINEL_SENSOR.get()).build(null));
+    public static final RegistryObject<Block> RAYCAST_BLOCKER = BLOCKS.register("raycast_blocker", () -> new Block(BlockBehaviour.Properties.copy(Blocks.DEEPSLATE)));
+    public static final RegistryObject<Block> RAYCAST_BLOCKER_GLASS = BLOCKS.register("raycast_blocker_glass", () -> new RaycastBlockerGlass(BlockBehaviour.Properties.copy(Blocks.TINTED_GLASS)));
+    public static final RegistryObject<Block> HEX_RESISTANT_BLOCK = BLOCKS.register("hex_resistant_block", () -> new Block(BlockBehaviour.Properties.copy(Blocks.OBSIDIAN).destroyTime(1.5f)));
+    public static final RegistryObject<Block> CIRCLE = BLOCKS.register("circle", () -> new CircleBlock(BlockBehaviour.Properties.copy(Blocks.BLACK_CONCRETE)
+            .noOcclusion().instabreak()));
+    public static final RegistryObject<Block> MEDIA_ICE = BLOCKS.register("media_ice", ()-> new Block(BlockBehaviour.Properties.copy(Blocks.PACKED_ICE)
+            .friction(1.1f).mapColor(MapColor.ICE)
+    ));
+    //produced by frost walker on thought slurry
+    public static final RegistryObject<Block> MEDIA_ICE_FROSTED = BLOCKS.register("media_ice_frosted", ()-> new FrostedMediaIceBlock(BlockBehaviour.Properties.copy(Blocks.PACKED_ICE)
+            .friction(1.08f).mapColor(MapColor.ICE).randomTicks().strength(0.5f).sound(SoundType.GLASS)
+    ));
+    public static final RegistryObject<MediaGelBlock> MEDIA_GEL = BLOCKS.register("media_gel", ()-> new MediaGelBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK)
+            .speedFactor(0.05f).jumpFactor(0.25f).mapColor(MapColor.ICE).sound(SoundType.SLIME_BLOCK).noOcclusion().destroyTime(Blocks.SOUL_SAND.defaultDestroyTime())
+    ));
+    //will eventually do something related to cellular automata, and be related to the media gel
+    public static final RegistryObject<CellBlock> CELL = BLOCKS.register("cell", ()-> new CellBlock(BlockBehaviour.Properties.copy(Blocks.SLIME_BLOCK)
+            .speedFactor(0.6f).jumpFactor(0.75f).mapColor(MapColor.ICE).sound(SoundType.SLIME_BLOCK).noOcclusion().destroyTime(Blocks.SOUL_SAND.defaultDestroyTime())
+    ));
+    public static final RegistryObject<BlockEntityType<CellEntity>> CELL_ENTITY = BLOCK_ENTITIES.register("cell_entity", () -> BlockEntityType.Builder.of(CellEntity::new, CELL.get()).build(null));
+
+    public static final RegistryObject<WispBattery> WISP_BATTERY = BLOCKS.register("wisp_battery", ()-> new WispBattery(BlockBehaviour.Properties.copy(HexBlocks.SLATE_BLOCK).lightLevel(createLightLevelFromBoolBlockState(WispBattery.REDSTONE_POWERED, 15))));
+    public static final RegistryObject<BlockEntityType<WispBatteryEntity>> WISP_BATTERY_ENTITY = BLOCK_ENTITIES.register("wisp_battery_entity", ()-> BlockEntityType.Builder.of(WispBatteryEntity::new, WISP_BATTERY.get()).build(null));
+    public static final RegistryObject<WispBatteryFake> WISP_BATTERY_DECORATIVE = BLOCKS.register("decorative_wisp_battery", ()-> new WispBatteryFake(BlockBehaviour.Properties.copy(HexBlocks.SLATE_BLOCK).lightLevel(createLightLevelFromBoolBlockState(WispBatteryFake.REDSTONE_POWERED, 15))));
+    public static final RegistryObject<BlockEntityType<WispBatteryEntityFake>> WISP_BATTERY_ENTITY_DECORATIVE = BLOCK_ENTITIES.register("decorative_wisp_battery_entity", ()-> BlockEntityType.Builder.of(WispBatteryEntityFake::new, WISP_BATTERY_DECORATIVE.get()).build(null));
+
+    public static RegistryObject<EdifiedTreeSpawnerBlock> EDIFIED_TREE_SPAWNER = BLOCKS.register("edified_tree_spawner", ()-> new EdifiedTreeSpawnerBlock(BlockBehaviour.Properties.copy(Blocks.AIR)));
+    public static RegistryObject<BlockEntityType<EdifiedTreeSpawnerBlockEntity>> EDIFIED_TREE_SPAWNER_ENTITY = BLOCK_ENTITIES.register("edified_tree_spawner_entity", ()->BlockEntityType.Builder.of(EdifiedTreeSpawnerBlockEntity::new, EDIFIED_TREE_SPAWNER.get()).build(null));
+
+    public static RegistryObject<HoverElevatorBlock> HOVER_ELEVATOR = BLOCKS.register("hover_elevator", ()-> new HoverElevatorBlock(BlockBehaviour.Properties.copy(HexBlocks.SLATE_BLOCK).lightLevel(createLightLevelFromBoolBlockState(HoverElevatorBlock.POWERED, 15))));
+    public static RegistryObject<BlockEntityType<HoverElevatorBlockEntity>> HOVER_ELEVATOR_ENTITY = BLOCK_ENTITIES.register("hover_elevator_entity", ()->BlockEntityType.Builder.of(HoverElevatorBlockEntity::new, HOVER_ELEVATOR.get()).build(null));
+    public static RegistryObject<Block> HOVER_REPEATER = BLOCKS.register("hover_repeater", ()->new HoverRepeaterBlock(BlockBehaviour.Properties.of().mapColor(MapColor.DEEPSLATE).instrument(NoteBlockInstrument.BASEDRUM).strength(3.0F, 6.0F).sound(SoundType.DEEPSLATE).instabreak().noOcclusion().noCollission()));
+
+    public static RegistryObject<AmethystClusterBlock> PSEUDOAMETHYST_CLUSTER = BLOCKS.register("pseudoamethyst_cluster", ()-> new AmethystClusterBlock(7, 3, BlockBehaviour.Properties.copy(Blocks.AMETHYST_CLUSTER)));
+    public static RegistryObject<AmethystClusterBlock> PSEUDOAMETHYST_BUD_LARGE = BLOCKS.register("pseudoamethyst_bud_large", ()-> new AmethystClusterBlock(5, 3, BlockBehaviour.Properties.copy(Blocks.LARGE_AMETHYST_BUD)));
+    public static RegistryObject<AmethystClusterBlock> PSEUDOAMETHYST_BUD_MEDIUM = BLOCKS.register("pseudoamethyst_bud_medium", ()-> new AmethystClusterBlock(4, 3, BlockBehaviour.Properties.copy(Blocks.MEDIUM_AMETHYST_BUD)));
+    public static RegistryObject<AmethystClusterBlock> PSEUDOAMETHYST_BUD_SMALL = BLOCKS.register("pseudoamethyst_bud_small", ()-> new AmethystClusterBlock(3, 4, BlockBehaviour.Properties.copy(Blocks.SMALL_AMETHYST_BUD)));
+
+    public static RegistryObject<SpaceBombBlock> SPACE_BOMB = BLOCKS.register("spacebomb", ()->new SpaceBombBlock(BlockBehaviour.Properties.copy(Blocks.RESPAWN_ANCHOR).lightLevel(createLightLevelFromBoolBlockState(BlockSlate.ENERGIZED, 13))));
+    public static RegistryObject<BlockEntityType<SpaceBombBlockEntity>> SPACE_BOMB_ENTITY = BLOCK_ENTITIES.register("spacebomb_entity", ()->BlockEntityType.Builder.of(SpaceBombBlockEntity::new, SPACE_BOMB.get()).build(null));
+
+    public static RegistryObject<InactiveSlipwayBlock> INACTIVE_SLIPWAY = BLOCKS.register("inactiveslipway", ()->new InactiveSlipwayBlock(BlockBehaviour.Properties.copy(HexalBlocks.SLIPWAY)));
+    public static RegistryObject<SlipwaySuppressorBlock> SLIPWAY_SUPPRESSOR = BLOCKS.register("slipwaysuppressor", ()->new SlipwaySuppressorBlock(BlockBehaviour.Properties.copy(HexBlocks.SLATE_BLOCK)));
+
+    //not intended to be the real-world monk fruit, just thought it was a good name, especially considering the etymology (https://en.wikipedia.org/wiki/Siraitia_grosvenorii#Etymology_and_regional_names)
+    public static RegistryObject<RenderBerryBushBlock> RENDER_BUSH = BLOCKS.register("monkfruit_bush", ()->new RenderBerryBushBlock(BlockBehaviour.Properties.copy(Blocks.SWEET_BERRY_BUSH)));
+
+    public static RegistryObject<ExtradimensionalBoundaryLocus> EXTRADIM_LOCUS = BLOCKS.register("extradimensional_border", ()->new ExtradimensionalBoundaryLocus(BlockBehaviour.Properties.copy(HexBlocks.SLATE_BLOCK).lightLevel(createLightLevelFromBoolBlockState(BlockCircleComponent.ENERGIZED, 14))));
+
+    //yes it acts like an xray thingy, no I don't care, it's not available in survival
+    public static RegistryObject<DeepNoosphereFloorBlock> DEEP_NOOSPHERE_FLOOR = BLOCKS.register("deep_border", ()->new DeepNoosphereFloorBlock(BlockBehaviour.Properties.copy(Blocks.BEDROCK).noParticlesOnBreak().mapColor(MapColor.ICE)));
+
+    public static RegistryObject<ConceptCoreBlock> CONCEPT_CORE = BLOCKS.register("concept_core", ()->new ConceptCoreBlock(BlockBehaviour.Properties.copy(HexBlocks.SLATE_BLOCK)));
+    public static RegistryObject<BlockEntityType<ConceptCoreBlockEntity>> CONCEPT_CORE_ENTITY = BLOCK_ENTITIES.register("concept_core_entity", ()->BlockEntityType.Builder.of(ConceptCoreBlockEntity::new, CONCEPT_CORE.get()).build(null));
+
+    public static RegistryObject<ConceptConnectorBlock> CONCEPT_CONNECTOR = BLOCKS.register("concept_connector", ()->new ConceptConnectorBlock(BlockBehaviour.Properties.copy(HexBlocks.SLATE_BLOCK)));
+
+    public static Supplier<BlockBehaviour.Properties> CONCEPT_MODIFIER_SETTINGS = ()->BlockBehaviour.Properties.copy(HexBlocks.SLATE_BLOCK).lightLevel((state)->15);
+
+    public static RegistryObject<ConceptDecoratorBlock> CONCEPT_MODIFIER_EMPTY = BLOCKS.register("concept_modifier_empty", ()->new ConceptDecoratorBlock(CONCEPT_MODIFIER_SETTINGS.get()));
+    public static RegistryObject<ConceptDecoratorBlock> CONCEPT_MODIFIER_SUS = BLOCKS.register("concept_modifier_sus", ()->new ConceptDecoratorBlock(CONCEPT_MODIFIER_SETTINGS.get()));
+
+    public static final Map<DyeColor, RegistryObject<ConceptDecoratorBlock>> COLORFUL_CONCEPT_MODIFIERS = new HashMap<>();
+    static {
+        for (DyeColor color : DyeColor.values()){
+            RegistryObject<ConceptDecoratorBlock> supplier = BLOCKS.register("concept_decorator_color/" + color.getName(), ()->new ConceptDecoratorBlock(CONCEPT_MODIFIER_SETTINGS.get()));
+            COLORFUL_CONCEPT_MODIFIERS.put(color, supplier);
+        }
+    }
+
+    private static final Function<CompoundTag, Double> ATTRIBUTE_CONCEPT_CALULATOR = (nbt)->{
+        double potency = nbt.getDouble("potency");
+        if (potency <= 1){
+            potency = (1 - potency) + 1; //0.8 original potency becomes 1.2 processed potency
+            return -Math.pow(potency * 5.0, 2.0);
+        } else {
+            return Math.pow(potency * 10.0, 2.0);
+        }
+    };
+    public static RegistryObject<ConceptModifierBlock> CONCEPT_MODIFIER_GRIDSIZE = BLOCKS.register("concept_modifier_gridsize", ()->new ConceptModifierBlock(CONCEPT_MODIFIER_SETTINGS.get(), ConceptModifier.ModifierType.ATTRIBUTE, HexAttributes.GRID_ZOOM, ATTRIBUTE_CONCEPT_CALULATOR));
+    public static RegistryObject<ConceptModifierBlock> CONCEPT_MODIFIER_MAXHEALTH = BLOCKS.register("concept_modifier_maxhealth", ()->new ConceptModifierBlock(CONCEPT_MODIFIER_SETTINGS.get(), ConceptModifier.ModifierType.ATTRIBUTE, Attributes.MAX_HEALTH, ATTRIBUTE_CONCEPT_CALULATOR));
+    public static RegistryObject<ConceptModifierBlock> CONCEPT_MODIFIER_ANTIEROSION = BLOCKS.register("concept_modifier_antierosion", ()->new ConceptModifierBlock(CONCEPT_MODIFIER_SETTINGS.get(), ConceptModifier.ModifierType.ANTIEROSION, (nbt)->10000.0));
+    public static RegistryObject<ConceptModifierBlock> CONCEPT_MODIFIER_REFERENCE_FALSY = BLOCKS.register("concept_modifier_falsy", ()->new ConceptModifierBlock(CONCEPT_MODIFIER_SETTINGS.get(), ConceptModifier.ModifierType.FALSY_REFERENCE, (nbt)->1000.0));
+    public static RegistryObject<ConceptModifierBlock> CONCEPT_MODIFIER_REFERENCE_COMPARISON = BLOCKS.register("concept_modifier_comparison", ()->new ConceptModifierBlock(CONCEPT_MODIFIER_SETTINGS.get(), ConceptModifier.ModifierType.REFERENCE_COMPARISON, (nbt)->1000.0));
+    public static RegistryObject<ConceptModifierBlock> CONCEPT_MODIFIER_GTP_DROP = BLOCKS.register("concept_modifier_gtp_drop", ()->new ConceptModifierBlock(CONCEPT_MODIFIER_SETTINGS.get(), ConceptModifier.ModifierType.GTP_DROPREDUCTION, (nbt)->1000.0));
+    public static RegistryObject<ConceptModifierBlock> CONCEPT_MODIFIER_STACK_SIZE = BLOCKS.register("concept_modifier_stack_size", ()->new ConceptModifierBlock(CONCEPT_MODIFIER_SETTINGS.get(), ConceptModifier.ModifierType.STACK_LIMIT, (nbt)->1000.0));
+
+    public static RegistryObject<BlockEntityType<ConceptModifierBlockEntity>> CONCEPT_MODIFIER_ENTITY = BLOCK_ENTITIES.register("concept_modifier_entity", ()->BlockEntityType.Builder.of(ConceptModifierBlockEntity::new,
+            CONCEPT_MODIFIER_GRIDSIZE.get(), CONCEPT_MODIFIER_MAXHEALTH.get(), CONCEPT_MODIFIER_GTP_DROP.get(),
+            CONCEPT_MODIFIER_ANTIEROSION.get(), CONCEPT_MODIFIER_REFERENCE_FALSY.get(), CONCEPT_MODIFIER_REFERENCE_COMPARISON.get(),
+            CONCEPT_MODIFIER_STACK_SIZE.get()
+    ).build(null));
+
+    public static RegistryObject<TranformingSkullBlock> TRANFORMING_SKULL = BLOCKS.register("transformingskull", ()->new TranformingSkullBlock(BlockBehaviour.Properties.copy(Blocks.ZOMBIE_HEAD)));
+    public static RegistryObject<TranformingWallSkullBlock> TRANFORMING_WALL_SKULL = BLOCKS.register("transformingskull_wall", ()->new TranformingWallSkullBlock(BlockBehaviour.Properties.copy(Blocks.ZOMBIE_HEAD)));
+    public static RegistryObject<BlockEntityType<TransformingSkullBlockEntity>> TRANFORMING_SKULL_ENTITY = BLOCK_ENTITIES.register("transformingskull_entity", ()-> BlockEntityType.Builder.of(TransformingSkullBlockEntity::new, TRANFORMING_SKULL.get(), TRANFORMING_WALL_SKULL.get()).build(null));
+
+    public static final BlockBehaviour.Properties INSTANT_BREAKER_SETTINGS = BlockBehaviour.Properties.of().strength(-1.0F, 3600000.8F).noOcclusion().isValidSpawn(Blocks::never).noParticlesOnBreak().pushReaction(PushReaction.BLOCK).noCollission().randomTicks();
+    public static RegistryObject<InstantBreakingBlock> INSTANT_BREAKER_RIFTRESIDUE = BLOCKS.register("rift_residue", ()->new InstantBreakingBlock(INSTANT_BREAKER_SETTINGS));
+    public static RegistryObject<BlockEntityType<InstantBreakingBlockEntity>> INSTANT_BREAKER_ENTITY = BLOCK_ENTITIES.register("instant_breaker_entity", ()-> BlockEntityType.Builder.of(InstantBreakingBlockEntity::new, INSTANT_BREAKER_RIFTRESIDUE.get()).build(null));
+
+
+    //mostly just stolen from the vanilla class since it's private in there
+    protected static ToIntFunction<BlockState> createLightLevelFromBoolBlockState(BooleanProperty property, int litLevel) {
+        return state -> state.getValue(property) ? litLevel : 0;
+    }
+
+    //used for the eternal chorus mixin
+    public static final BooleanProperty ETERNAL = BooleanProperty.create("eternal");
+}
