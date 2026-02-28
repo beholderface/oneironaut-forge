@@ -1,12 +1,28 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "org.arcticquests.dev.oneironaut.Oneironaut.mixin",
+  "package": "org.arcticquests.dev.oneironaut.oneironautt.mixin",
   "compatibilityLevel": "JAVA_8",
   "refmap": "oneironautfinal.refmap.json",
   "mixins": [
     "BlockRaycastImmunityMixin",
-    "CubeLoreGrantMixin"
+    "CubeLoreGrantMixin",
+    "EntityRaycastImmunityMixin",
+    "EntityRefConceptMixin",
+    "EraseSoulprintSignatureMixin",
+    "GeneralCastEnvInvoker",
+    "IllegalIotasMixin",
+    "ImpulseRedirectFireballMixin",
+    "IotaTypeInvoker",
+    "MaxStackSizeMixinVM",
+    "MiscWispMixin",
+    "PlayerCastEnvInvoker",
+    "SentinelTrapMixinSummon",
+    "ZoneDistImmunityMixin",
+    "IotaKeyableMixins.EntityIotaKeyableMixin",
+    "IotaKeyableMixins.Vec3IotaKeyableMixin"
+
+
   ],
   "client": [
   ],

@@ -671,7 +671,7 @@ java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent
 [21Jan2026 20:14:10.072] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@1319bc2a - got cpw.mods.cl.ModuleClassLoader@aac3f4e
 [21Jan2026 20:14:10.074] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for com.llamalad7.mixinextras.platform.forge.MixinExtrasMod
 [21Jan2026 20:14:10.075] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@1319bc2a - got cpw.mods.cl.ModuleClassLoader@aac3f4e
-[21Jan2026 20:14:10.075] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for org.arcticquests.dev.oneironaut.Oneironaut.Oneironaut
+[21Jan2026 20:14:10.075] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for org.arcticquests.dev.oneironaut.oneironautt.Oneironaut
 [21Jan2026 20:14:10.076] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@1319bc2a - got cpw.mods.cl.ModuleClassLoader@aac3f4e
 [21Jan2026 20:14:10.076] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLModContainer/LOADING]: Creating FMLModContainer instance for at.petrak.paucal.ForgePaucalInit
 [21Jan2026 20:14:10.076] [Render thread/DEBUG] [net.minecraftforge.fml.javafmlmod.FMLJavaModLanguageProvider/LOADING]: Loading FMLModContainer from classloader cpw.mods.modlauncher.TransformingClassLoader@1319bc2a - got cpw.mods.cl.ModuleClassLoader@aac3f4e
@@ -714,7 +714,7 @@ java.lang.IllegalAccessException: class io.netty.util.internal.PlatformDependent
 [21Jan2026 20:14:10.179] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Attempting to inject @EventBusSubscriber classes into the eventbus for patchouli
 [21Jan2026 20:14:10.179] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Attempting to inject @EventBusSubscriber classes into the eventbus for inline
 [21Jan2026 20:14:10.180] [modloading-worker-0/INFO] [net.minecraftforge.common.MinecraftForge/FORGE]: MinecraftForge v47.4.15 Initialized
-[21Jan2026 20:14:10.185] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing org.arcticquests.dev.oneironaut.Oneironaut.Oneironaut$ClientModEvents to MOD
+[21Jan2026 20:14:10.185] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing org.arcticquests.dev.oneironaut.oneironautt.Oneironaut$ClientModEvents to MOD
 [21Jan2026 20:14:10.185] [modloading-worker-0/DEBUG] [net.minecraftforge.fml.javafmlmod.AutomaticEventSubscriber/LOADING]: Auto-subscribing vazkii.patchouli.forge.common.ForgeModInitializer to MOD
 [21Jan2026 20:14:10.186] [modloading-worker-0/DEBUG] [mixin/]: Mixing AccessorCriteriaTriggers from paucal_xplat.mixins.json into net.minecraft.advancements.CriteriaTriggers
 [21Jan2026 20:14:10.189] [modloading-worker-0/DEBUG] [mixin/]: Mixing accessor.CriteriaTriggersAccessor from hexplat.mixins.json into net.minecraft.advancements.CriteriaTriggers
