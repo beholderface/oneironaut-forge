@@ -7,6 +7,7 @@
   "mixins": [
     "BlockRaycastImmunityMixin",
     "CubeLoreGrantMixin",
+    "DecorativeWispMixin",
     "EntityRaycastImmunityMixin",
     "EntityRefConceptMixin",
     "EraseSoulprintSignatureMixin",
@@ -16,13 +17,12 @@
     "IotaTypeInvoker",
     "MaxStackSizeMixinVM",
     "MiscWispMixin",
+    "OpBreakBlockImmunityMixin",
     "PlayerCastEnvInvoker",
     "SentinelTrapMixinSummon",
     "ZoneDistImmunityMixin",
     "IotaKeyableMixins.EntityIotaKeyableMixin",
     "IotaKeyableMixins.Vec3IotaKeyableMixin"
-
-
   ],
   "client": [
   ],

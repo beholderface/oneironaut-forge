@@ -62,10 +62,7 @@ public class WispBatteryEntityFake extends BlockEntity {
                                     world.random.nextInt(HexItems.DYE_PIGMENTS.size()))),
                             Util.NIL_UUID
                     ));
-
-                    // Forge replacement for CCA component write:
                     wisp.getCapability(WispDecorativeCapability.INSTANCE).ifPresent(c -> c.setValue(true));
-
                     world.addFreshEntity(wisp);
                 }
             }
