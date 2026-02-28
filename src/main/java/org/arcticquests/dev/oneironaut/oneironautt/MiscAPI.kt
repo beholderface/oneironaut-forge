@@ -40,6 +40,9 @@ import net.minecraft.Util
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.core.Vec3i
+import net.minecraft.network.chat.Component
+import net.minecraft.world.entity.ai.memory.MemoryModuleType
+import net.minecraft.world.entity.npc.Villager
 import net.minecraft.world.entity.npc.VillagerDataHolder
 import net.minecraft.world.entity.npc.VillagerProfession
 import net.minecraft.world.level.WorldGenLevel
@@ -47,6 +50,7 @@ import net.minecraft.world.level.Level
 import net.minecraft.world.level.border.WorldBorder
 import net.minecraft.world.phys.AABB
 import net.minecraft.world.phys.Vec3
+import net.minecraftforge.network.PacketDistributor
 import org.arcticquests.dev.oneironaut.oneironautt.casting.conceptmodification.ConceptModifier
 import org.arcticquests.dev.oneironaut.oneironautt.casting.conceptmodification.ConceptModifierManager
 import org.arcticquests.dev.oneironaut.oneironautt.casting.environments.ReverbRodCastEnv
@@ -55,6 +59,7 @@ import org.arcticquests.dev.oneironaut.oneironautt.casting.iotatypes.DimIota
 import org.arcticquests.dev.oneironaut.oneironautt.casting.iotatypes.SoulprintIota
 import org.arcticquests.dev.oneironaut.oneironautt.mixin.GeneralCastEnvInvoker
 import org.arcticquests.dev.oneironaut.oneironautt.mixin.IotaTypeInvoker
+import org.arcticquests.dev.oneironaut.oneironautt.network.OneironautNetwork
 import org.arcticquests.dev.oneironaut.oneironautt.network.UnBrainsweepPacket
 import org.arcticquests.dev.oneironaut.oneironautt.recipe.OneironautRecipeTypes
 import java.util.*
@@ -346,29 +351,77 @@ fun vecProximity(a: Direction, b: Vec3): Double {
     return vecProximity(Vec3.atLowerCornerOf(a.normal), b)
 }
 private const val DECORATIVE_KEY = "oneironaut:decorative"
-private const val BRAINSWEPT_KEY = "oneironaut:brainswept"
-fun Mob.setBrainsweptForge(value: Boolean) {
-    this.persistentData.putBoolean(BRAINSWEPT_KEY, value)
-}
-fun Mob.isBrainsweptForge(): Boolean =
-    this.persistentData.getBoolean(BRAINSWEPT_KEY)
+
 
 var Entity.isDecorative: Boolean
     get() = this.persistentData.getBoolean(DECORATIVE_KEY)
     set(value) { this.persistentData.putBoolean(DECORATIVE_KEY, value) }
 
+private const val BRAINSWEPT_KEY = "oneironaut:brainswept"
+
+fun Mob.setBrainsweptForge(value: Boolean) {
+    this.persistentData.putBoolean(BRAINSWEPT_KEY, value)
+}
+
+fun Mob.isBrainsweptForge(): Boolean =
+    this.persistentData.getBoolean(BRAINSWEPT_KEY)
+
+/**
+ * Restores a brainswept mob's state; resets villagers to Nitwit.
+ * Sends a "UnBrainsweep" packet to nearby players for visual effect, if needed.
+ */
 fun Mob.unbrainsweep() {
+
+    if (!this.level().isClientSide) {
+        Oneironaut.LOGGER.info(
+            "Unbrainsweeping mob: {} (id: {}) at [{}, {}, {}]",
+            this.name.string, this.id, this.x, this.y, this.z
+        )
+        val msg = Component.literal("Unbrainswept ${this.name.string} at (${this.x.toInt()}, ${this.y.toInt()}, ${this.z.toInt()})")
+        for (player in (this.level() as ServerLevel).players()) {
+            if (player.position().distanceTo(this.position()) < 64) {
+                player.sendSystemMessage(msg)
+            }
+        }
+
+        OneironautNetwork.CHANNEL.send(
+            PacketDistributor.NEAR.with {
+                PacketDistributor.TargetPoint(
+                    this.position().x, this.position().y, this.position().z,
+                    256.0,
+                    (this.level() as ServerLevel).dimension()
+                )
+            },
+            UnBrainsweepPacket(this.id)
+        )
+    }
+
+    if (!this.level().isClientSide) {
+        OneironautNetwork.CHANNEL.send(
+            PacketDistributor.NEAR.with {
+                PacketDistributor.TargetPoint(
+                    this.position().x, this.position().y, this.position().z,
+                    256.0,
+                    (this.level() as ServerLevel).dimension()
+                )
+            },
+            UnBrainsweepPacket(this.id)
+        )
+    }
+
     this.setBrainsweptForge(false)
+
     this.setNoAi(false)
     val brain = this.brain
     brain.useDefaultActivity()
     brain.updateActivityFromSchedule(this.level().dayTime, this.level().gameTime)
-    if (this is VillagerDataHolder){
-        val newData = this.villagerData.setLevel(0).setProfession(VillagerProfession.NITWIT)
-        this.villagerData = newData
+
+    if (this is Villager) {
+        this.villagerData = this.villagerData
+            .setLevel(0)
+            .setProfession(VillagerProfession.NITWIT)
+        this.villagerXp = 0
     }
-    val refreshNBT = this.saveWithoutId(CompoundTag())
-    this.load(refreshNBT)
 }
 
 

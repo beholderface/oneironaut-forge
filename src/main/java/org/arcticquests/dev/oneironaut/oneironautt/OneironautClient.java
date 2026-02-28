@@ -132,12 +132,6 @@ public final class OneironautClient {
             event.enqueueWork(() -> {
                 cachedClient = Minecraft.getInstance();
 
-                // ---- Fluid rendering (Fabric -> Forge): TODO ----
-                // Fabric: FluidRenderHandlerRegistry.INSTANCE.register(...)
-                // Forge replacement is via IClientFluidTypeExtensions and/or custom fluid type registration.
-                // If your ThoughtSlurry is a Forge FluidType, implement IClientFluidTypeExtensions for it.
-                // If you only need the *block* translucent, set render layer on the fluid block(s) instead.
-
                 // ---- Scrying lens overlays ----
                 ScryingLensOverlayRegistry.addDisplayer(
                         OneironautBlockRegistry.WISP_BATTERY.get(),
@@ -200,14 +194,10 @@ public final class OneironautClient {
                 Oneironaut.LOGGER.info("Applied cutout layer to {} blocks", applyBlockRenderLayers(cutoutBlocks, RenderType.cutout()));
                 Oneironaut.LOGGER.info("Applied translucent layer to {} blocks", applyBlockRenderLayers(List.of(translucentBlocks), RenderType.translucent()));
 
-                // ---- Dimension effects ----
-                registerDimensionEffects(Oneironaut.id("noosphere"), new NoosphereDimensionEffects());
-                registerDimensionEffects(Oneironaut.id("deep_noosphere"), new DeepNoosphereDimensionEffects());
 
-                // ---- Item properties (Fabric ItemPropertiesRegistry -> vanilla ItemProperties) ----
                 ItemPackagedHex[] castingItems = {
-                        (ItemPackagedHex) OneironautItemRegistry.REVERBERATION_ROD.get(),
-                        (ItemPackagedHex) OneironautItemRegistry.BOTTOMLESS_CASTING_ITEM.get()
+                        OneironautItemRegistry.REVERBERATION_ROD.get(),
+                        OneironautItemRegistry.BOTTOMLESS_CASTING_ITEM.get()
                 };
                 for (ItemPackagedHex item : castingItems) {
                     ItemProperties.register(item, ItemPackagedHex.HAS_PATTERNS_PRED,
@@ -246,8 +236,6 @@ public final class OneironautClient {
                         return 0f;
                     });
                 }
-
-                // client-only init you previously did on CLIENT_STARTED
                 InactiveSlipwayBlock.init();
                 Oneironaut.LOGGER.info("Cached client object. Player: {}", cachedClient.player);
             });

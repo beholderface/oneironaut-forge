@@ -279,20 +279,6 @@ public class Oneironaut {
         return false;
     }
 
-    public static boolean isWorldDeepNoosphere(Level world) {
-        try {
-            if (world != null) {
-                if (world instanceof ServerLevel serverWorld) {
-                    return serverWorld == deepNoosphere;
-                } else if (world.isClientSide) {
-                    return OneironautClient.isWorldClientDeepNoosphere(world);
-                }
-            }
-        } catch (Exception e) {
-            // just let it return false
-        }
-        return false;
-    }
 
     public static MinecraftServer getCachedServer() {
         if (server == null) {

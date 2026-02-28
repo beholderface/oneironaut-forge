@@ -40,6 +40,11 @@ public class OvercastDamageEnchant extends Enchantment {
         return playerlessColor;
     }
 
+    @Override
+    protected String getOrCreateDescriptionId() {
+        return "";
+    }
+
     public OvercastDamageEnchant() {
         super(Rarity.RARE, EnchantmentCategory.WEAPON, new EquipmentSlot[]{EquipmentSlot.MAINHAND});
     }

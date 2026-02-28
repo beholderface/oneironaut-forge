@@ -9,8 +9,7 @@ import net.minecraft.world.entity.LivingEntity;
 import org.arcticquests.dev.oneironaut.oneironautt.registry.OneironautMiscRegistry;
 
 public class GlowingAmbitEffect extends MobEffect {
-    //this class is (mostly) only necessary because StatusEffect's constructor method is protected for some reason, the actual functionality of the effect is in a couple mixins
-    //the glow is in GlowAmbitEffectGlowMixin, and the ambit is in GlowAmbitEffectAmbitMixin
+
     public GlowingAmbitEffect() {
         super(MobEffectCategory.NEUTRAL, 0x7355ff);
     }

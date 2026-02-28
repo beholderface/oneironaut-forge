@@ -41,6 +41,4 @@ public class OneironautMiscRegistry {
         ENCHANTMENTS.register(bus);
     }
 
-
-
 }
